@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from loja.models import Project
 
-# Create your views here.
+
 def home(request):
-  return render(request, 'index.html')
+  project = Project.objects.all()
+  return render(request, 'index.html', {'projects':project})
